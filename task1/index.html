@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frontend Practice #1 (Kryvenko)</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+            * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            }
+
+            body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #f7f7f7; /* Светлый фон снаружи, чтобы карточка четко читалась */
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px 15px;
+            }
+
+            .location-card {
+            width: 100%;
+            max-width: 390px; /* Узкий блок */
+            background-color: #ffffff;
+            text-align: center;
+            }
+
+            .location-card__image-box {
+            width: 100%;
+            }
+
+            .location-card__image {
+            width: 100%;
+            height: auto;
+            display: block;
+            }
+
+            .location-card__body {
+            padding: 32px 18px 30px;
+            }
+
+            .location-card__title,
+            .location-card__subtitle {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            letter-spacing: 3px;
+            color: #0f0f0f;
+            text-transform: uppercase;
+            }
+
+            .location-card__title {
+            font-size: 20px;
+            margin-bottom: 24px;
+            }
+
+            .location-card__subtitle {
+            font-size: 18px;
+            margin-bottom: 18px;
+            }
+
+            .location-card__address {
+            font-style: normal;
+            font-size: 15px;
+            line-height: 1.5;
+            color: #222222;
+            margin-bottom: 22px;
+            }
+
+            .location-card__text {
+            font-size: 13.5px;
+            line-height: 1.55;
+            color: #3d3d3d;
+            margin-bottom: 28px;
+            }
+
+            .socials {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 24px;
+            }
+
+            .socials__item {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background-color: #b7a6c0; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: transform 0.2s ease, background-color 0.2s ease;
+            }
+
+            .socials__item:hover {
+            background-color: #9d87a7;
+            transform: translateY(-2px);
+            }
+
+            .socials__item svg {
+            width: 16px;
+            height: 16px;
+            fill: #ffffff;
+            display: block;
+            }
+
+            .location-card__footer {
+            font-size: 13.5px;
+            color: #222222;
+            }
+
+            .location-card__footer a {
+            color: inherit;
+            text-decoration: none;
+            }
+
+            .location-card__footer a:hover {
+            text-decoration: underline;
+            }
+  </style>
+</head>
+<body>
+
+  <article class="location-card">
+    <div class="location-card__image-box">
+      <img src="06a294c5-94b7-4e7c-bcb0-12929df2a341.jpg" alt="flower" class="location-card__image">
+    </div>
+
+    <div class="location-card__body">
+      <h2 class="location-card__title">LOCATION</h2>
+
+      <address class="location-card__address">
+        28 Jackson Blvd Ste 1020 Chicago<br>
+        IL 60604-2340
+      </address>
+
+      <p class="location-card__text">
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi 
+        ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
+        reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla.
+      </p>
+
+      <h3 class="location-card__subtitle">FOLLOW US</h3>
+
+      <div class="socials">
+        <a href="#" class="socials__item" aria-label="Facebook">
+          <svg viewBox="0 0 24 24">
+            <path d="M14 13.5h2.5l1-4H14v-2c0-1.03.45-1.5 1.7-1.5H17.5V2.3c-.63-.09-1.84-.3-3.2-.3-3.3 0-5.3 2-5.3 5.5v2H6v4h3v8.5h5v-8.5z"/>
+          </svg>
+        </a>
+
+        <a href="#" class="socials__item" aria-label="Twitter">
+          <svg viewBox="0 0 24 24">
+            <path d="M22 5.8a8.5 8.5 0 0 1-2.4.7 4.2 4.2 0 0 0 1.8-2.3 8.3 8.3 0 0 1-2.6 1 4.1 4.1 0 0 0-7 3.7A11.7 11.7 0 0 1 3.3 4.5a4.1 4.1 0 0 0 1.3 5.5 4 4 0 0 1-1.9-.5v.1c0 2 1.4 3.7 3.3 4.1a4.2 4.2 0 0 1-1.8.1 4.1 4.1 0 0 0 3.8 2.9 8.3 8.3 0 0 1-5.1 1.8c-.3 0-.7 0-1-.1A11.7 11.7 0 0 0 8.3 20c7.5 0 11.6-6.2 11.6-11.6v-.5A8.3 8.3 0 0 0 22 5.8z"/>
+          </svg>
+        </a>
+
+        <a href="#" class="socials__item" aria-label="Instagram">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 2.2c3.2 0 3.6 0 4.8.1 3.3.1 4.8 1.6 4.9 4.9.1 1.2.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 3.3-1.6 4.8-4.9 4.9-1.2.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-3.3-.1-4.8-1.6-4.9-4.9-.1-1.2-.1-1.6-.1-4.8s0-3.6.1-4.8c.1-3.3 1.6-4.8 4.9-4.9 1.2-.1 1.6-.1 4.8-.1zm0 1.8c-3.1 0-3.5 0-4.7.1-2.3.1-3.5 1.3-3.6 3.6-.1 1.2-.1 1.6-.1 4.7s0 3.5.1 4.7c.1 2.3 1.3 3.5 3.6 3.6 1.2.1 1.6.1 4.7.1s3.5 0 4.7-.1c2.3-.1 3.5-1.3 3.6-3.6.1-1.2.1-1.6.1-4.7s0-3.5-.1-4.7c-.1-2.3-1.3-3.5-3.6-3.6-1.2-.1-1.6-.1-4.7-.1zm0 3.9a4.1 4.1 0 1 1 0 8.2 4.1 4.1 0 0 1 0-8.2zm0 1.8a2.3 2.3 0 1 0 0 4.6 2.3 2.3 0 0 0 0-4.6zm5.3-3.3a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+          </svg>
+        </a>
+
+        <a href="#" class="socials__item" aria-label="Google Plus">
+          <svg viewBox="0 0 24 24">
+            <path d="M7.7 10.6v2.8h4.4c-.2 1.3-1.4 3.7-4.4 3.7-2.6 0-4.8-2.2-4.8-4.8s2.2-4.8 4.8-4.8c1.5 0 2.5.6 3.1 1.2l2.2-2.1C11.6 5.3 9.8 4.5 7.7 4.5 3.7 4.5.5 7.7.5 11.7s3.2 7.2 7.2 7.2c4.2 0 6.9-2.9 6.9-7 0-.5-.1-.8-.1-1.3H7.7zm11.5.3v-2.1h-2.1v2.1H15v2.1h2.1v2.1h2.1V13H21.3v-2.1h-2.1z"/>
+          </svg>
+        </a>
+      </div>
+
+      <footer class="location-card__footer">
+        ©2026 <a href="#">Privacy policy</a>
+      </footer>
+    </div>
+  </article>
+
+</body>
+</html>
