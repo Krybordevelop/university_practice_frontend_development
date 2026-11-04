@@ -1,0 +1,269 @@
+@import url("fonts.css");
+
+:root {
+  --blue: #2f6fed;
+  --navy: #172b4d;
+  --muted: #718096;
+  --line: #e5eaf2;
+  --background: #f3f7fc;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  color: var(--navy);
+  background: var(--background);
+  font-family: "Poppins", "Fira", sans-serif;
+}
+
+.quote-page {
+  display: grid;
+  min-height: 100vh;
+  place-items: center;
+  padding: 48px 24px;
+}
+
+.quote-card {
+  display: grid;
+  width: min(1120px, 100%);
+  min-height: 700px;
+  overflow: hidden;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgb(34 70 120 / 12%);
+  grid-template-columns: minmax(360px, 0.9fr) minmax(500px, 1.1fr);
+}
+
+.image-section {
+  min-height: 100%;
+  background: #dbe9fb;
+}
+
+.image-section img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.form-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 64px 72px;
+}
+
+.form-intro {
+  margin-bottom: 30px;
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+  color: var(--blue);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2rem, 3vw, 2.65rem);
+  line-height: 1.2;
+}
+
+.subtitle {
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.form-main {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-row {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: 1fr 1fr;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+label,
+.field-label {
+  color: var(--navy);
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+input,
+textarea {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  outline: 0;
+  padding: 13px 15px;
+  color: var(--navy);
+  background: #fbfcfe;
+  font: inherit;
+  font-size: 0.82rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus,
+textarea:focus {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgb(47 111 237 / 12%);
+}
+
+textarea {
+  min-height: 105px;
+  resize: vertical;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #a9b5c5;
+}
+
+.file-upload {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  min-height: 68px;
+  padding: 12px 15px;
+  border: 1px dashed #b6c8e3;
+  border-radius: 8px;
+  color: var(--muted);
+  background: #f8fbff;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.file-upload:hover,
+.file-upload.is-dragging {
+  border-color: var(--blue);
+  background: #f1f6ff;
+}
+
+.file-upload input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.file-upload__icon {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border-radius: 50%;
+  color: var(--blue);
+  background: #e6efff;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.file-upload__text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 0.78rem;
+}
+
+.file-upload__text strong {
+  color: var(--blue);
+}
+
+.file-upload__text small {
+  font-size: 0.7rem;
+}
+
+.submit-btn {
+  align-self: flex-start;
+  border: 0;
+  border-radius: 8px;
+  padding: 13px 25px;
+  color: #fff;
+  background: var(--blue);
+  font: inherit;
+  font-size: 0.83rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.submit-btn span {
+  margin-left: 8px;
+  font-size: 1.1rem;
+}
+
+.submit-btn:hover {
+  background: #1f5bd3;
+  transform: translateY(-1px);
+}
+
+.form-message {
+  min-height: 20px;
+  margin: -5px 0 0;
+  color: #248a58;
+  font-size: 0.75rem;
+}
+
+@media (max-width: 900px) {
+  .quote-card {
+    display: flex;
+    flex-direction: column;
+    max-width: 680px;
+  }
+
+  .image-section {
+    height: 280px;
+    min-height: 0;
+  }
+
+  .form-section {
+    padding: 48px 56px;
+  }
+}
+
+@media (max-width: 560px) {
+  .quote-page {
+    padding: 0;
+    place-items: start center;
+  }
+
+  .quote-card {
+    min-height: 100vh;
+    border-radius: 0;
+  }
+
+  .image-section {
+    height: 210px;
+  }
+
+  .form-section {
+    padding: 34px 22px 40px;
+  }
+
+  .form-intro {
+    margin-bottom: 24px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
