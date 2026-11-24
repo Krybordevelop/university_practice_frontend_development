@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Практична робота 6. Генератор випадкових кольорів</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <main class="app">
+      <header class="app__header">
+        <div>
+          <p class="app__eyebrow">Практична робота 6</p>
+          <h1>Генератор кольорів</h1>
+        </div>
+
+        <div class="controls" aria-label="Керування кольорами">
+          <button class="button button--primary" id="regenerate" type="button">
+            Регенерувати
+          </button>
+          <button class="button button--secondary" id="clear" type="button">
+            Очистити
+          </button>
+        </div>
+      </header>
+
+      <section class="colors" id="colors" aria-label="Випадкові кольори"></section>
+    </main>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="script.js"></script>
+  </body>
+</html>
